@@ -13,12 +13,14 @@
     --azul-escuro: #3F51B5;
     --azul-claro: #2196F3;
     --preto: #242424;
+    --azul-esvanecino: #2195f398;
 }
 
 body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     height: 100vh; 
+    background-color: var(--preto);
 }
 
 /*---------------HEADER---------------*/
@@ -39,7 +41,8 @@ header h1 {
     background: linear-gradient(140deg, #f00, rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: #242424 1px 0px 30px;}
+    text-shadow: #242424 1px 0px 30px;
+}
 
 .search {
     display: flex;
@@ -88,6 +91,8 @@ header h1 {
 main {
     display: grid;
     height: 100vh;
+    text-transform: capitalize;
+
 }
 
 .pokeInfo {
@@ -114,7 +119,8 @@ main {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-    width: 80%;    
+    width: 80%; 
+    text-transform: capitalize;   
 }
 
 /*Informações*/
@@ -139,10 +145,26 @@ main {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background-color: var(--azul-claro);
+    background-color: var(--azul-esvanecino);
     border-radius: 10px;
     width: 80%;
     height: 200px;
+}
+
+.info h3 {
+    font-size: 18px;
+    text-align: center;
+    background-color: var(--preto);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 90%; 
+    text-transform: capitalize;   
+}
+
+.info p {
+    font-size: 15px;
 }
 
 /*Imagens*/
