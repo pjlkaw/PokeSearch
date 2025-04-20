@@ -18,13 +18,16 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "header pokeInfo Info";
     height: 100vh; 
     background-color: var(--preto);
 }
 
+
+
 /*---------------HEADER---------------*/
 header {
+    grid-area: header;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +56,9 @@ header h1 {
     border-radius: 10px;
     padding: 10px;
     margin: 20px;
+    margin-top: 0px;
     width: 300px;
+    box-shadow: #000000 1px 0px 10px;
 }
 
 .search input {
@@ -85,6 +90,29 @@ header h1 {
     color: #ffffff;
 }
 
+#pokefont {
+    grid-area: pokeinfo, info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#pokefont img {
+    background-color: var(--vermelho);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #000000 1px 0px 10px;
+    cursor: default;
+}
+
+.alert {
+    color: #ffffff;
+}
+
 /*---------------MAIN---------------*/
 
 /*PokeInfo*/
@@ -108,7 +136,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background: linear-gradient(to right, var(--preto), var(--azul-claro));
+    background: linear-gradient(to right, var(--preto), var(--vermelho));
 }
 
 .pokemon h2 {
@@ -133,7 +161,7 @@ main {
 .infos {
     grid-area: info;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 200px 200px 200px;
     align-items: center;
     justify-content: center;
     justify-items: center;
@@ -144,10 +172,10 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    background-color: var(--azul-esvanecino);
+    margin: 0 auto;
+    background-color: var(--vermelho);
     border-radius: 10px;
-    width: 80%;
+    width: 90%;
     height: 200px;
 }
 
