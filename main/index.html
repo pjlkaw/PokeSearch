@@ -24,9 +24,11 @@
 
 
     <main>
+
         <div id="pokefont" style="display: show;">
             <a href=""><img src="https://fontmeme.com/permalink/250420/d73ffe1963e884f55c87a8b808ba67ef.png" alt="fonte-de-pokemon" border="0"></a>
             <p class="alert" id="alert"></p>
+            <p class="erro" id="erro" >Erros de pesquisa podem acontecer, pois a API é gratuita e os dados podem estar desatualizados.</p>
         </div>
 
         <div id="pokeInfo" class="pokeInfo" style="display: none;">
@@ -74,23 +76,24 @@
                 <!--Estatisticas-->
                 <div class="info">
                     <h3>Estatisticas</h3>
-                    <p id="hp"></p>
-                    <p id="atk"></p>
-                    <p id="def"></p>
-                    <p id="special"></p>
-                    <p id="speed"></p>
+                    <p id="hp">0</p>
+                    <p id="atk">0</p>
+                    <p id="def">0</p>
+                    <p id="special">0</p>
+                    <p id="speed">0</p>
                 </div>
             </div>
         </div>
 
-
-
     </main>
 
-
-
-
-
+    <script>
+    document.getElementById("searchInput").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            search();
+        }
+    });
+    </script>
     <script src="./javascript/script.js"></script>
 </body>
 </html>
