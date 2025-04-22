@@ -1,3 +1,4 @@
+// Cor baseada no tipo do pokemon
 const typeColors = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -21,8 +22,10 @@ const typeColors = {
 
 function search() {
 
+    //Pegar o input
     const input = document.getElementById("searchInput").value;
 
+    //Validação da busca
     if (input === "") {
         document.getElementById("alert").textContent = "Não encontrado ou inválido!";
         document.getElementById("erro").style.display = "block";
@@ -33,6 +36,7 @@ function search() {
         document.getElementById("pokefont").style.display = "none";
         document.getElementById("pokeInfo").style.display = "flex"; 
 
+        //Pegar informações
         fetch(`https://pokeapi.co/api/v2/pokemon/${input.toLowerCase()}`)
         .then(response => response.json())
         .then(data => {
@@ -85,21 +89,25 @@ function search() {
 
             console.log(data)
         })
+        //Caso de erro
         .catch(error => {
             console.error(error)
             document.getElementById("alert").textContent = "Erro ao buscar o Pokémon. Verifique o nome digitado!";
             document.getElementById("pokeInfo").style.display = "none";
-            document.getElementById("pokefont").style.display = "show";
+            document.getElementById("pokefont").style.display = "flex";
+            document.getElementById("erro").style.display = "block";
         })
+
+        //Limpa o input
         document.getElementById("searchInput").value = "";
 
 
         //Botão Home
         document.getElementById("homeIcon").addEventListener("click", () => {
-            document.getElementById("homeIcon").style.display = "none";
+            document.getElementById("homeIcon").style.display = "hide";
             document.getElementById("pokeInfo").style.display = "none";
             document.getElementById("pokefont").style.display = "flex";
-            
+            document.getElementById("erro").style.display = "flex";
         })
 
     }
