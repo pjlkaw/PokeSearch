@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="PokeSearch" content="Pesquisa de Pokemons">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PokeSearch</title>
+</head>
+<body>
+    <header>
+        <!--Home Button-->
+        <div class="homeIcon"  id="homeIcon" style="display: none;">
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <!--Titulo-->
+        <h1>PokeSearch</h1>
+        <!--Busca-->
+        <div class="search">
+            <!--Home Button-->
+            <input id="searchInput" type="text" placeholder="Digite o nome do Pokemon..." >
+            <button onclick="search()">
+                <img src="https://png.pngtree.com/png-vector/20220723/ourmid/pngtree-pokeball-icon-vector-isolated-black-design-isolated-vector-png-image_22496306.png" alt="">
+            </button>
+            <p>Clique na Pokebola para pesquisar!</p>
+        </div>
+    </header>
+    
+
+
+    <main>
+
+        <div id="pokefont" style="display: show;">
+            <a href=""><img src="https://fontmeme.com/permalink/250420/d73ffe1963e884f55c87a8b808ba67ef.png" alt="fonte-de-pokemon" border="0"></a>
+            <p class="alert" id="alert"></p>
+            <p class="erro" id="erro" >Erros de pesquisa podem acontecer, pois a API é gratuita e os dados podem estar desatualizados.</p>
+        </div>
+
+        <div id="pokeInfo" class="pokeInfo" style="display: none;">
+            <div class="pokemon">
+                <h2 id="name">Squirtle</h2>
+                <img id="pokeImg" src="" alt="Squirtle">    
+            </div>
+
+            <!--Informações-->
+            <div class="infos">
+
+                <!--Número-->
+                <div class="info">
+                    <h3>ID</h3>
+                    <p id="id"></p>
+                </div>
+
+                <!--Altura-->
+                <div class="info">
+                    <h3>Altura</h3>
+                    <p id="height"></p>
+                </div>
+
+                <!--Peso-->
+                <div class="info">
+                    <h3>Peso</h3>
+                    <p id="weight"></p>
+                </div>
+
+                <!--Tipo-->
+                <div class="info">
+                    <h3>Tipo</h3>
+                    <span id="type1"></span>
+                    <span id="type2"></span>
+                </div>
+
+                <!--Habilidades-->
+                <div class="info">
+                    <h3>Habilidades</h3>
+                    <p id="ability1"></p>
+                    <p id="ability2"></p>
+                    <p id="ability3"></p>
+                </div>
+
+                <!--Estatisticas-->
+                <div class="info">
+                    <h3>Estatisticas</h3>
+                    <p id="hp">0</p>
+                    <p id="atk">0</p>
+                    <p id="def">0</p>
+                    <p id="special">0</p>
+                    <p id="speed">0</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+    document.getElementById("searchInput").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            search();
+        }
+    });
+    </script>
+    <script src="javascript/script.js"></script>
+</body>
+</html>
