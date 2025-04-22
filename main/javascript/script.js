@@ -29,8 +29,9 @@ function search() {
         return
     }
     else {
+        document.getElementById("homeIcon").style.display = "flex";
         document.getElementById("pokefont").style.display = "none";
-        document.getElementById("pokeInfo").style.display = "flex";    
+        document.getElementById("pokeInfo").style.display = "flex"; 
 
         fetch(`https://pokeapi.co/api/v2/pokemon/${input.toLowerCase()}`)
         .then(response => response.json())
@@ -86,11 +87,20 @@ function search() {
         })
         .catch(error => {
             console.error(error)
-            document.getElementById("alert").textContent = "Erro ao buscar o Pokémon. Verifique o nome digitado.";
+            document.getElementById("alert").textContent = "Erro ao buscar o Pokémon. Verifique o nome digitado!";
             document.getElementById("pokeInfo").style.display = "none";
-            document.getElementById("pokefont").style.display = "";
+            document.getElementById("pokefont").style.display = "show";
         })
         document.getElementById("searchInput").value = "";
+
+
+        //Botão Home
+        document.getElementById("homeIcon").addEventListener("click", () => {
+            document.getElementById("homeIcon").style.display = "none";
+            document.getElementById("pokeInfo").style.display = "none";
+            document.getElementById("pokefont").style.display = "flex";
+            
+        })
 
     }
 
