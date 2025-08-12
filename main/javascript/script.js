@@ -79,6 +79,7 @@ function search() {
             document.getElementById("special").innerHTML = "Sp. Atk: " + data.stats[3].base_stat
             document.getElementById("speed").innerHTML = "Speed: " + data.stats[5].base_stat
 
+            //CORES
             //Cor do pokemon
             const mainType = data.types[0].type.name;
             const mainColor = typeColors[mainType] || "#ffffff";
@@ -86,6 +87,19 @@ function search() {
             infos.forEach(div => {
                 div.style.backgroundColor = mainColor;
             });
+
+            //Cor do Background
+            const pokeBg = document.querySelector(".pokemon");
+            pokeBg.style.background = `linear-gradient(to left, ${mainColor}, var(--preto))`;
+
+            //Cor do texto
+            const h1 = document.querySelector("header h1");
+            h1.style.background = `linear-gradient(140deg, rgb(255, 255, 255), ${mainColor})`;
+            h1.style.webkitBackgroundClip = "text";
+            h1.style.color = "transparent";
+
+            const searchContainer = document.querySelector(".search");
+            searchContainer.style.backgroundColor = mainColor;
 
             console.log(data)
         })
@@ -110,7 +124,7 @@ function search() {
             document.getElementById("erro").style.display = "flex";
         })
 
+        
     }
-
 
 }
